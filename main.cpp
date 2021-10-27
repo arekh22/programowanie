@@ -1,4 +1,4 @@
-//wersja 1.0
+//wersja 1.2
 #include <iostream>
 
 using namespace std;
@@ -8,9 +8,16 @@ int main(int argc, char** argv) {
 	cout<<"podaj a: ", cin>>a;
 	cout<<"podaj b: ", cin>>b;
 	float x;
-	x=-b/a;
-	cout<<"miejsce zerowe funkcji: "<<x<<endl;
-	
+	if(a==0)
+	{
+		cout<<"funkcja stala"<<endl;
+	}
+	else
+	{
+		x=-b/a;
+		cout<<"miejsce zerowe funkcji: "<<x<<endl;
+	}
+
 	
 	
 	return 0;
