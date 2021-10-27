@@ -1,4 +1,4 @@
-//wersja 2.0
+//wersja 2.2
 #include <iostream>
 #include <cmath>
 
@@ -43,23 +43,33 @@ int main(int argc, char** argv) {
 	cout<<"podaj b: ", cin>>bb;
 	cout<<"podaj c: ", cin>>cc;
 	
-	delta = bb*bb -4*aa*cc;
+	if(aa==0)
+		{
+			cout<<"To jest funkcja linoiowa"<<endl;
+			x1=-cc/bb;
+			cout<<"miejsce zerowe to: "<<x1;
+		}
+		else
+		{
+			delta = bb*bb -4*aa*cc;
 	
-	if (delta>0) 
-	{
-		x1=(-bb-sqrt(delta))/2*aa;
-		x2=(-bb+sqrt(delta))/2*aa;
-		cout<<"x1= "<<x1<<"\nx2= "<<x2<<endl;
+		if (delta>0) 
+		{
+			x1=(-bb-sqrt(delta))/2*aa;
+			x2=(-bb+sqrt(delta))/2*aa;
+			cout<<"x1= "<<x1<<"\nx2= "<<x2<<endl;
+		}
+		else if (delta==0)
+		{
+			x1=-bb/2*aa;
+			cout<<"funkcja kwadratowa posiada jedno miejsce zerowe: "<<x1<<endl;
+		}
+		else
+		{
+			cout<<"funkcja kwadratowa nie ma miejsc zeroweych"<<endl;
+		}
 	}
-	else if (delta==0)
-	{
-		x1=-bb/2*aa;
-		cout<<"funkcja kwadratowa posiada jedno miejsce zerowe: "<<x1<<endl;
-	}
-	else
-	{
-		cout<<"funkcja kwadratowa nie ma miejsc zeroweych"<<endl;
-	}
+	
 	
 	
 	return 0;
