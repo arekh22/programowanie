@@ -1,4 +1,4 @@
-//wersja 2.4
+//wersja 2.6
 #include <iostream>
 #include <cmath>
 
@@ -10,10 +10,13 @@ int main(int argc, char** argv) {
 	cout<<"Menu wyboru:"<<endl;
 	cout<<"1. funkcja liniowa"<<endl;
 	cout<<"2. Funkcja kwadratowa"<<endl;
+	cout<<"3. Funkcja kwadratowa (postac kanoniczna)"<<endl;
 	cout<<"Wybierz funkcje: ", cin>>x;
 	
 	float a, b, A, B, C;//funkcja linoiowa
 	float aa, bb, cc, delta, x1, x2;//funkcja kwadratowa
+	float ak, p, q, Ak, Bk, Ck, deltak, xk1, xk2; //funkcja kwadratowa kanoniczna
+	
 	
 	switch( x )
 	{
@@ -83,6 +86,46 @@ int main(int argc, char** argv) {
 			}
 		}
 	    break;
+	    
+	case 3:	
+	
+	cout<<"Funkcja kwadratowa w postaci kanonicznej: y=a(x-p)^2 + q"<<endl; //ax2-2apx+(ap2+q)
+	cout<<"podaj a: ", cin>>ak;
+	cout<<"podaj p: ", cin>>p;
+	cout<<"podaj q: ", cin>>q;
+	
+	Ak=ak;
+	Bk=-2*ak*p;
+	Ck=ak*p*p+q;
+	deltak=Bk*Bk-4*Ak*Ck;
+		
+		if(Ak==0)
+			{
+				cout<<"To jest funkcja linoiowa"<<endl;
+				xk1=-Ck/Bk;
+				cout<<"miejsce zerowe to: "<<xk1;
+			}
+			else
+			{
+				deltak = Bk*Bk -4*Ak*Ck;
+		
+			if (deltak>0) 
+			{
+				xk1=(-Bk-sqrt(deltak))/2*Ak;
+				xk2=(-Bk+sqrt(deltak))/2*Ak;
+				cout<<"x1= "<<xk1<<"\nx2= "<<xk2<<endl;
+			}
+			else if (deltak==0)
+			{
+				xk1=-Bk/2*Ak;
+				cout<<"funkcja kwadratowa posiada jedno miejsce zerowe: "<<xk1<<endl;
+			}
+			else
+			{
+				cout<<"funkcja kwadratowa nie ma miejsc zeroweych"<<endl;
+			}
+		}
+	break;
 	   
 	default:
 	    cout<<"Poda³eœ z³¹ wartoœæ";
