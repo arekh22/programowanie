@@ -1,10 +1,11 @@
-//wersja 2.6
+//wersja 2.6.
 #include <iostream>
 #include <cmath>
 
 using namespace std;
 
 int main(int argc, char** argv) {
+	
 	
 	int x;//zmienna wyboru
 	cout<<"Menu wyboru:"<<endl;
