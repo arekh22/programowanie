@@ -1,23 +1,28 @@
 //wersja 2.6.
 #include <iostream>
 #include <cmath>
+#include "ogolna.cpp"
 
 using namespace std;
 
 int main(int argc, char** argv) {
 	
 	
+	
 	int x;//zmienna wyboru
-	cout<<"Menu wyboru:"<<endl;
-	cout<<"1. funkcja liniowa"<<endl;
-	cout<<"2. Funkcja kwadratowa"<<endl;
-	cout<<"3. Funkcja kwadratowa (postac kanoniczna)"<<endl;
-	cout<<"Wybierz funkcje: ", cin>>x;
+	int y;//zmienna wyboru zamiany postaci
+	
 	
 	float a, b, A, B, C;//funkcja linoiowa
 	float aa, bb, cc, delta, x1, x2;//funkcja kwadratowa
 	float ak, p, q, Ak, Bk, Ck, deltak, xk1, xk2; //funkcja kwadratowa kanoniczna
 	
+	
+	cout<<"Menu wyboru:"<<endl;
+	cout<<"1. funkcja liniowa"<<endl;
+	cout<<"2. Funkcja kwadratowa (ogolna)"<<endl;
+	cout<<"3. Funkcja kwadratowa (postac kanoniczna)"<<endl;
+	cout<<"Wybierz funkcje: ", cin>>x;
 	
 	switch( x )
 	{
@@ -86,6 +91,7 @@ int main(int argc, char** argv) {
 				cout<<"funkcja kwadratowa nie ma miejsc zeroweych"<<endl;
 			}
 		}
+		ogolna(aa,bb,cc);
 	    break;
 	    
 	case 3:	
@@ -126,6 +132,8 @@ int main(int argc, char** argv) {
 				cout<<"funkcja kwadratowa nie ma miejsc zeroweych"<<endl;
 			}
 		}
+		
+		
 	break;
 	   
 	default:
