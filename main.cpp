@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cmath>
 #include "ogolna.cpp"
+#include "kanonicznacpp.cpp"
 
 using namespace std;
 
@@ -77,8 +78,10 @@ int main(int argc, char** argv) {
 		
 			if (delta>0) 
 			{
+				ogolna(aa,bb,cc);
 				x1=(-bb-sqrt(delta))/2*aa;
 				x2=(-bb+sqrt(delta))/2*aa;
+				cout<<"miejsca zerowe to: "<<endl;
 				cout<<"x1= "<<x1<<"\nx2= "<<x2<<endl;
 			}
 			else if (delta==0)
@@ -91,7 +94,7 @@ int main(int argc, char** argv) {
 				cout<<"funkcja kwadratowa nie ma miejsc zeroweych"<<endl;
 			}
 		}
-		ogolna(aa,bb,cc);
+		
 	    break;
 	    
 	case 3:	
@@ -118,8 +121,11 @@ int main(int argc, char** argv) {
 		
 			if (deltak>0) 
 			{
+				kanoniczna(p,a,ak);
+				
 				xk1=(-Bk-sqrt(deltak))/2*Ak;
 				xk2=(-Bk+sqrt(deltak))/2*Ak;
+				cout<<endl;
 				cout<<"x1= "<<xk1<<"\nx2= "<<xk2<<endl;
 			}
 			else if (deltak==0)
